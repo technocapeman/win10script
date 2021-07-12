@@ -920,6 +920,9 @@ $windowssearch.Add_Click({
 
     Remove-Item $layoutFile #>
 
+    #Restart Explorer
+    Stop-Process -name explorer
+    
     Write-Host "Finished Start Menu and Search Tweaks"
     
 })
