@@ -2,18 +2,23 @@
 
 **WARNING: I DO NOT TAKE RESPONSIBILITY FOR WHAT MAY HAPPEN TO YOUR SYSTEM. THIS IS AT YOUR OWN RISK.**
 
-Out of the box, Windows 10 (and 11) are EXTREMELY bloated operating systems. Processes such as advertising and telemetry are known to slow down your system, and Windows also comes with useless apps as well, many of which are sponsored. These scripts, forked from [ChrisTitusTech's win10script repository](https://github.com/ChrisTitusTech/win10script) and tweaked by Kapilesh Pennichetty, will debloat your Windows 10 system so that you can enjoy a fast, seamless computing experience with Windows.
+Out of the box, Windows 10 (and 11) are EXTREMELY bloated operating systems. Processes such as advertising and telemetry are known to slow down your system, and Windows also comes with useless apps as well, many of which are sponsored. These scripts, forked from [ChrisTitusTech's win10script repository](https://github.com/ChrisTitusTech/win10script) and tweaked by Kapilesh Pennichetty, will debloat your system so that you can enjoy a fast, seamless computing experience with Windows.
 
 To run:
+
+The script to run is windebloater.ps1 if you are on the master branch, or win10debloat.ps1 if you are on the downstream branch.
+
 - Open Powershell as Administrator
-- Navigate to the directory where windebloater.ps1 is stored
+- Navigate to the directory where the script is stored
 - Set the Execution Policy to unrestricted
-- Run the windebloater.ps1 script, and select your desired apps and debloat options. Wait until the script finishes before closing the window.
+- Run the script, and select your desired apps and debloat options. Wait until the script finishes before closing the window.
 - Restart your computer
 - Open Powershell as Admin
 - Restrict the execution policy for security.
 
-Enjoy your speedy Windows 10 experience!
+Tweaks from this script may need to be re-run after each feature update, as feature updates tend to reinstall bloatware and reset other settings that this script disables, such as telemetry. Feature updates happen every six months, starting at the beginning of the year.
+
+Enjoy your speedy Windows experience!
 
 ## For Contributors
 
