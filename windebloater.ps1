@@ -397,6 +397,13 @@ $sumatrapdf.height               = 30
 $sumatrapdf.location             = New-Object System.Drawing.Point(3,561)
 $sumatrapdf.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
+$capemanapps                     = New-Object System.Windows.Forms.Button
+$capemanapps.text                = "My Preferred Apps"
+$capemanapps.width               = 212
+$capemanapps.height              = 30
+$capemanapps.location            = New-Object System.Drawing.Point(3,590)
+$capemanapps.Font                = New-Object System.Drawing.Font("Microsoft Sans Serif",12)
+
 $vscodium                        = New-Object system.Windows.Forms.Button
 $vscodium.text                   = "VS Codium"
 $vscodium.width                  = 211
@@ -433,7 +440,7 @@ $reinstallbloat.location         = New-Object System.Drawing.Point(4, 374)
 $reinstallbloat.Font             = New-Object System.Drawing.Font("Microsoft Sans Serif",12)
 
 $Form.controls.AddRange(@($Panel1,$Panel2,$Label3,$Label15,$Panel4,$PictureBox1,$Label1,$Label4,$Panel3))
-$Panel1.controls.AddRange(@($brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$honeyview))
+$Panel1.controls.AddRange(@($brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$honeyview,$capemanapps))
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$actioncenter,$darkmode,$visualfx,$onedrive,$lightmode,$removebloat,$windowssearch))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
 $Panel3.controls.AddRange(@($essentialundo,$EActionCenter,$ECortana,$RBackgroundApps,$HTrayIcons,$EClipboardHistory,$ELocation,$InstallOneDrive,$yourphonefix,$reinstallbloat))
@@ -536,6 +543,19 @@ $sumatrapdf.Add_Click({
     Write-Host "Installing Sumatra PDF"
     winget install SumatraPDF.SumatraPDF | Out-Host
     if($?) { Write-Host "Installed Sumatra PDF" }
+})
+
+$capemanapps.Add_Click({
+    Write-Host "Installing technocapeman's preferred apps"
+    $myapps = 'vscode', 'brave', 'discord', 'Microsoft.WindowsTerminal', 'python', 'adoptopenjdk11', 'git', 'hwinfo', 'notepad++', 'obs', 'shotcut', 'zoom', 'virtualbox', '7zip'
+    foreach ($app in $myapps) {
+        winget install $app | Out-Host
+        if($?) { Write-Host "Installed $app"}
+        else {
+            Write-Host "There was an error installing $app"
+        }
+    }
+    Write-Host "Finished installing technocapeman's preferred apps"
 })
 
 $openshell.Add_Click({
